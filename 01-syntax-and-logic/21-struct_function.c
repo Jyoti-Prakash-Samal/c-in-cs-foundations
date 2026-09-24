@@ -1,38 +1,24 @@
-// Typedef aur Struct ko Function mein bhejna
 #include <stdio.h>
-
-// Aaj ka magic: 'typedef struct'
-// Isse hume baar-baar 'struct' keyword nahi likhna padega!
 typedef struct {
     char name[50];
     int id;
-    float cgpa;
-} Student; // Ab 'Student' directly ek data type ban gaya (jaise int)
+    float gpa;
+} Student;
 
-// Naya Concept: Poori bori ko function mein bhejna
-void printIDCard(Student s) {
-    printf("\n=== IIIT ID CARD ===\n");
-    printf("Name : %s\n", s.name);
-    printf("ID   : %d\n", s.id);
-    printf("CGPA : %.2f\n", s.cgpa);
-    printf("====================\n");
+void ID(Student s)
+{
+    printf("Student ID: %d\n", s.id);
+    printf("Student Name: %s\n", s.name);
+    printf("Student GPA: %.2f\n", s.gpa);
 }
-
-int main(void) {
-    // Dekh, yahan 'struct Student' nahi likha, seedha 'Student' likha hai!
-    Student s1; 
-
-    printf("Enter Name: ");
-    scanf(" %[^\n]", s1.name);
-    
-    printf("Enter ID: ");
+int main(void){
+    Student s1;
+    printf("Enter student name:\n");
+scanf(" %[^\n]", s1.name);
+    printf("Enter student ID:\n");
     scanf("%d", &s1.id);
-    
-    printf("Enter CGPA: ");
-    scanf("%f", &s1.cgpa);
-    
-    // Bori (s1) ko seedha function ke andar pass kar diya
-    printIDCard(s1);
-    
+    printf("Enter student GPA:\n");
+    scanf("%f", &s1.gpa);
+    ID(s1);
     return 0;
 }
