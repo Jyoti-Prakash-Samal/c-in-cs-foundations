@@ -14,11 +14,18 @@ int main(void){
         printf("Enter student GPA:\n");
         scanf("%f", &students[i].gpa);
     }
+ int s;
+ printf("Enter an id to search for:\n");
+ scanf("%d", &s);
+ 
     for(int i = 0; i < 3; i++){
-        printf("\nStudent %d\n", i + 1);
-        printf("Name: %s\n", students[i].name);
-        printf("ID: %d\n", students[i].id);
-        printf("GPA: %.2f\n", students[i].gpa);
+        if(students[i].id == s){
+            printf("\nStudent found:\n");
+            printf("Name: %s\n", students[i].name);
+            printf("ID: %d\n", students[i].id);
+            printf("GPA: %.2f\n", students[i].gpa);
+            return 0;
+        }
     }
+    printf("Student with ID %d not found.\n", s);
     return 0;
-}
